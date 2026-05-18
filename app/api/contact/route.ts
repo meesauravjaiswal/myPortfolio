@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
       to: process.env.TO_EMAIL!,
-      replyTo: email,
+      reply_To: email,
       subject: `[Portfolio] ${subject}`,
       html: emailTemplate(name, email, subject, message),
     })
