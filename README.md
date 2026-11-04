@@ -1,8 +1,8 @@
 # Saurav Kumar Jaiswal — Portfolio
 
-> Production-ready cybersecurity portfolio built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+> Personal portfolio — software & security engineer. Built with Next.js 14, TypeScript, Tailwind CSS and Framer Motion.
 
-**Live:** [meesauravjaiswal.dev](https://meesauravjaiswal.dev) · **Built by:** Saurav Kumar Jaiswal
+**Live:** [sauravjaiswal.vercel.app](https://sauravjaiswal.vercel.app) · **Built by:** Saurav Kumar Jaiswal
 
 ---
 
@@ -15,7 +15,7 @@
 | Styling | Tailwind CSS |
 | Animations | Framer Motion |
 | Icons | Lucide React |
-| Email | Resend API (or SMTP) |
+| Email | Resend API |
 | Deployment | Vercel |
 
 ---
@@ -40,7 +40,7 @@ npm run dev
 ## Project Structure
 
 ```
-portfolio-nextjs/
+myPortfolio/
 ├── app/                    # Next.js App Router
 │   ├── page.tsx            # Home page
 │   ├── about/              # About page
@@ -48,7 +48,7 @@ portfolio-nextjs/
 │   ├── experience/         # Experience page
 │   ├── certifications/     # Certifications page
 │   ├── skills/             # Skills page
-│   ├── blog/               # Blog page
+│   ├── blog/               # Blog page (not linked until posts exist)
 │   ├── contact/            # Contact page
 │   ├── resume/             # Resume download page
 │   ├── api/contact/        # Contact form API route
@@ -58,7 +58,7 @@ portfolio-nextjs/
 │
 ├── components/
 │   ├── layout/             # Navbar, Footer
-│   ├── ui/                 # TypingAnimation, ScrollProgress
+│   ├── ui/                 # ProjectCard, TypingAnimation, ScrollProgress
 │   └── sections/           # Hero, Experience, Projects, Certs, Skills, Contact
 │
 ├── data/
@@ -90,17 +90,17 @@ portfolio-nextjs/
 {
   id: 'my-new-project',
   title: 'My New Project',
-  subtitle: 'Security Tool',
-  year: '2025',
-  status: 'completed',
-  category: 'cybersecurity',
+  subtitle: 'Short tagline',
+  year: '2026',                       // optional
+  status: 'completed',                // or 'in-progress' (shows a badge)
+  categories: ['software', 'ai'],     // any of: 'software' | 'ai' | 'cybersecurity'
   icon: '🔐',
   description: '...',
   features: ['Feature 1', 'Feature 2'],
   stack: ['Python', 'FastAPI'],
-  github: 'https://github.com/meesauravjaiswal/...',
+  github: 'https://github.com/meesauravjaiswal/...',  // or null for labs without a repo
   demo: null,
-  featured: true,
+  featured: true,                     // featured projects appear on the home page
 }
 ```
 
@@ -110,8 +110,10 @@ portfolio-nextjs/
 {
   id: 'oscp',
   title: 'Offensive Security Certified Professional (OSCP)',
-  issuer: 'Offensive Security',
-  issued: 'Jan 2026',
+  short: 'OSCP',                      // shown in the hero terminal
+  issuer: 'OffSec',
+  issuerShort: 'OffSec',
+  issued: 'Jan 2027',
   credentialId: 'OS-1234567',
   skills: ['Exploit Development', 'Buffer Overflow', 'Privilege Escalation'],
   verifyUrl: 'https://...',
@@ -121,7 +123,7 @@ portfolio-nextjs/
 ```
 
 ### Add a blog post
-Drop an `.mdx` file in `content/blog/` (wire up MDX when ready).
+Add entries to the `posts` array in `app/blog/page.tsx` (or wire up MDX), then add Blog back to the Navbar/Footer links and the sitemap.
 
 ---
 
@@ -133,7 +135,7 @@ Drop an `.mdx` file in `content/blog/` (wire up MDX when ready).
    RESEND_API_KEY=re_...
    TO_EMAIL=saurav.jaiswal.meee@gmail.com
    ```
-3. Uncomment the Resend block in `app/api/contact/route.ts`
+3. Set the same two variables in the Vercel project settings. The form returns 503 if either is missing.
 
 ---
 
@@ -157,7 +159,7 @@ Target Lighthouse scores: **Performance 95+ · SEO 95+ · A11y 95+ · Best Pract
 
 ## Resume
 
-Drop your PDF at `public/resume.pdf` — the Resume page will automatically serve it as a download.
+Replace `public/resume.pdf` — the Resume page previews it inline and offers it as `Saurav_Jaiswal_Resume.pdf`.
 
 ---
 
@@ -167,4 +169,4 @@ Personal portfolio — not a template. Please don't reuse without modifications.
 
 ---
 
-*Built for top-tier companies. Cybersecurity-first. Engineering-focused.*
+*Software & security engineering portfolio.*

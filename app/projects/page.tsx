@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { personal } from '@/data'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
@@ -6,8 +7,8 @@ import { ProjectsPageContent } from './content'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Security tools, automation frameworks, and full-stack projects built by Saurav Kumar Jaiswal — AutoVAPT, SubEnum, and more.',
-  alternates: { canonical: 'https://meesauravjaiswal.dev/projects' },
+  description: 'Projects by Saurav Kumar Jaiswal — ExploitAIzer (LLM-assisted VAPT platform), Vendor Invoice Intelligence, KronoX, a Java hotel management system, and security labs.',
+  alternates: { canonical: `${personal.siteUrl}/projects` },
 }
 
 export default function ProjectsPage() {

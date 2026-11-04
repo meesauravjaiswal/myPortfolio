@@ -22,11 +22,11 @@ export function SkillsSection() {
             Technical Arsenal
           </h2>
           <p className="text-[15.5px] text-[#94A3B8] max-w-[540px] leading-[1.75] mb-14">
-            A focused set of cybersecurity and engineering skills built through certifications, projects, and real-world work.
+            Languages, frameworks and tools I have actually shipped with — through projects, training and real work.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {skills.map((group, i) => (
             <motion.div
               key={group.group}

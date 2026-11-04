@@ -49,7 +49,7 @@ export function ContactSection() {
             Let&apos;s Connect
           </h2>
           <p className="text-[15.5px] text-[#94A3B8] max-w-[540px] leading-[1.75] mb-14">
-            Open to cybersecurity roles, internships, collaborations, and security consultations. I respond within 24 hours.
+            Open to full-time software engineering and security roles. Immediate joiner, open to relocation — I usually reply within a day.
           </p>
         </motion.div>
 
@@ -140,7 +140,7 @@ export function ContactSection() {
 
               {status === 'success' && (
                 <p role="status" className="text-center text-[13.5px] text-[#34D399] font-mono">
-                  ✓ Message sent! I'll get back to you within 24 hours.
+                  ✓ Message sent! I&apos;ll get back to you soon.
                 </p>
               )}
               {status === 'error' && (

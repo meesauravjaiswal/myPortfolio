@@ -18,7 +18,7 @@ export function EducationSection() {
             Academic Background
           </h2>
           <p className="text-[15.5px] text-[#94A3B8] max-w-[540px] leading-[1.75] mb-14">
-            Strong foundation in Computer Science and Communication Engineering from a premier technical institution.
+            B.Tech in Computer Science & Communication Engineering from KIIT, graduated 2026.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

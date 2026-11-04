@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { personal } from '@/data'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
@@ -6,8 +7,8 @@ import { CertificationsSection } from '@/components/sections/CertificationsSecti
 
 export const metadata: Metadata = {
   title: 'Certifications',
-  description: 'Verified cybersecurity certifications — eJPTv2, PT1 (TryHackMe), ICCA (INE). All credentials are publicly verifiable.',
-  alternates: { canonical: 'https://meesauravjaiswal.dev/certifications' },
+  description: 'Verified certifications — CEH v13 (EC-Council), eJPTv2 (INE), PT1 (TryHackMe) and ICCA (INE). Every credential is publicly verifiable.',
+  alternates: { canonical: `${personal.siteUrl}/certifications` },
 }
 
 export default function CertificationsPage() {

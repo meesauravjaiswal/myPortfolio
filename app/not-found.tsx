@@ -8,7 +8,7 @@ export default function NotFound() {
       <Navbar />
       <main className="min-h-screen flex items-center justify-center px-7">
         <div className="text-center max-w-lg">
-          <div className="font-mono text-[14px] text-[#22D3EE] mb-4">// 404</div>
+          <div className="font-mono text-[14px] text-[#22D3EE] mb-4">{'// 404'}</div>
           <div className="font-mono text-[80px] font-black text-white leading-none mb-4 tracking-[-4px] opacity-10">
             404
           </div>
@@ -20,7 +20,7 @@ export default function NotFound() {
           </p>
           <div className="bg-[rgba(255,255,255,0.028)] border border-[rgba(255,255,255,0.07)] rounded-xl p-4 font-mono text-[12.5px] text-[#94A3B8] mb-8 text-left">
             <span className="text-[#475569]">└─$ </span>
-            <span className="text-[#22D3EE]">curl -I https://meesauravjaiswal.dev/???</span><br/>
+            <span className="text-[#22D3EE]">curl -I https://sauravjaiswal.vercel.app/???</span><br/>
             <span className="text-[#F87171]">HTTP/1.1 404 Not Found</span>
           </div>
           <Link

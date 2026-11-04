@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { personal } from '@/data'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
@@ -6,8 +7,8 @@ import { ContactSection } from '@/components/sections/ContactSection'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Get in touch with Saurav Kumar Jaiswal — available for cybersecurity roles, internships, collaborations, and security consultations.',
-  alternates: { canonical: 'https://meesauravjaiswal.dev/contact' },
+  description: 'Get in touch with Saurav Kumar Jaiswal — open to full-time software engineering and security roles. Immediate joiner, open to relocation.',
+  alternates: { canonical: `${personal.siteUrl}/contact` },
 }
 
 export default function ContactPage() {

@@ -7,7 +7,8 @@ import { personal, education, skills, achievements } from '@/data'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: `Learn about Saurav Kumar Jaiswal — Cybersecurity Engineer, KIIT Bhubaneswar, CGPA ${personal.cgpa}. Specializing in VAPT and security automation.`,
+  description: `About Saurav Kumar Jaiswal — ${personal.title}, ${personal.currentRole}. KIIT CS&CE 2026, CGPA ${personal.cgpa}.`,
+  alternates: { canonical: `${personal.siteUrl}/about` },
 }
 
 export default function AboutPage() {
@@ -19,17 +20,17 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-7">
           <div className="section-label">About</div>
           <h1 className="font-display font-black text-[clamp(30px,4vw,52px)] tracking-[-2px] text-white mb-6">
-            Engineering Security,<br/>One Tool at a Time
+            Software Engineer<br/>with a Security Mindset
           </h1>
           <div className="prose prose-invert max-w-none">
             <p className="text-[16px] text-[#94A3B8] leading-[1.8] mb-6">
-              I&apos;m Saurav Kumar Jaiswal — a final-year B.Tech CS&CE student at KIIT Bhubaneswar with a deep focus on cybersecurity, penetration testing, and security automation. My approach to security is fundamentally engineering-driven: I build tools that make assessments faster, findings clearer, and defenses stronger.
+              I&apos;m Saurav Kumar Jaiswal — a 2026 Computer Science &amp; Communication Engineering graduate from KIIT, now a Technical Consulting Engineer trainee at Cisco CX in Bengaluru. I like building software that is correct first: exact money math, inputs that can&apos;t be weaponised, and tests that prove it.
             </p>
             <p className="text-[16px] text-[#94A3B8] leading-[1.8] mb-6">
-              Currently holding eJPTv2, PT1, and ICCA certifications, I&apos;ve developed hands-on expertise in VAPT frameworks, active directory security, MITRE ATT&CK mapping, and cloud security through real internship work with Gurugram Police (GPCSSI&apos;25).
+              At Cisco I built a multi-currency invoice reconciliation system in Python and trained in CCNA routing &amp; switching and in LLMs, RAG and agentic AI. Before that I was a Capgemini Exceller Edge Fellow, and a cybersecurity intern with Gurugram Police (GPCSSI&apos;25), where I built an automated vulnerability-assessment framework.
             </p>
             <p className="text-[16px] text-[#94A3B8] leading-[1.8] mb-10">
-              My engineering philosophy: security should be automated, measurable, and integrated — not an afterthought. I build tools that scale: AutoVAPT automates the entire VAPT pipeline, SubEnum accelerates recon with concurrent probing, and I&apos;m constantly expanding toward DevSecOps and cloud-native security architectures.
+              My current project is ExploitAIzer — a full-stack platform where an LLM agent checks raw scanner findings and reports only the genuine ones. I hold CEH v13, eJPTv2, PT1 and ICCA, and I&apos;m looking for a full-time software engineering or security role where I can ship real systems.
             </p>
           </div>
 

@@ -1,12 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { certifications, experiences, personal, projects } from '@/data'
 
 const stats = [
-  { num: '3', suffix: '+', label: 'Certifications' },
-  { num: '2', suffix: '+', label: 'Projects Built' },
-  { num: '8.56', suffix: '', label: 'CGPA at KIIT' },
-  { num: '1', suffix: '+', label: 'Internship' },
+  { num: String(certifications.length), suffix: '', label: 'Certifications' },
+  { num: String(projects.length), suffix: '', label: 'Projects & Labs' },
+  { num: personal.cgpa, suffix: '', label: 'CGPA at KIIT' },
+  { num: String(experiences.length), suffix: '', label: 'Roles & Programs' },
 ]
 
 export function StatsBar() {

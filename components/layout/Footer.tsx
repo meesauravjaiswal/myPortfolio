@@ -6,7 +6,7 @@ const links = [
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
   { href: '/certifications', label: 'Certifications' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/resume', label: 'Resume' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -26,7 +26,7 @@ export function Footer() {
               SKJ<span className="text-[#22D3EE]">.</span>
             </Link>
             <p className="text-[13px] text-[#475569] max-w-xs leading-relaxed">
-              Cybersecurity Engineer · Penetration Tester · Security Automation Specialist
+              {personal.title} · {personal.currentRole}
             </p>
             <div className="flex items-center gap-1 mt-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse-dot inline-block" />
@@ -86,7 +86,7 @@ export function Footer() {
 
         <div className="border-t border-[rgba(255,255,255,0.05)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-[#2D3748]">
-            © {new Date().getFullYear()} Saurav Kumar Jaiswal · Crafted with precision
+            © {new Date().getFullYear()} {personal.name}
           </p>
           <p className="font-mono text-[11px] text-[#2D3748]">
             Built with Next.js · TypeScript · Tailwind · Framer Motion

@@ -6,14 +6,15 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { personal } from '@/data'
 
 const navLinks = [
-  { href: '/#hero',           label: 'Home'       },  // ← add this line
+  { href: '/#hero',           label: 'Home'       },
   { href: '/#experience',     label: 'Experience' },
   { href: '/#projects',       label: 'Projects'   },
   { href: '/#certifications', label: 'Certs'      },
   { href: '/#skills',         label: 'Skills'     },
-  { href: '/blog',            label: 'Blog'       },
+  { href: '/resume',          label: 'Resume'     },
   { href: '/#contact',        label: 'Contact'    },
 ]
 
@@ -56,7 +57,7 @@ export function Navbar() {
   }
 
   const isActive = (href: string) => {
-    if (href === '/blog') return pathname === '/blog'
+    if (href === '/resume') return pathname === '/resume'
     if (href.startsWith('/#')) return isHome && activeSection === href.slice(2)
     return false
   }
@@ -93,10 +94,10 @@ export function Navbar() {
             </Link>
           ))}
           <a
-            href="mailto:saurav.jaiswal.meee@gmail.com"
+            href={`mailto:${personal.email}`}
             className="ml-2 text-[13px] font-semibold bg-[#22D3EE] text-black px-4 py-1.5 rounded-lg hover:shadow-[0_4px_18px_rgba(34,211,238,0.3)] hover:-translate-y-px transition-all duration-200"
           >
-            Mail ↗
+            Hire Me ↗
           </a>
         </nav>
 
@@ -136,7 +137,7 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="mailto:saurav.jaiswal.meee@gmail.com"
+                href={`mailto:${personal.email}`}
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 text-[13.5px] font-semibold bg-[#22D3EE] text-black px-4 py-2.5 rounded-lg text-center"
               >

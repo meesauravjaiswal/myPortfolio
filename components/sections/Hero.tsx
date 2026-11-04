@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, Phone, Shield, FileDown, ArrowRight } from 'luc
 import Image from 'next/image'
 import Link from 'next/link'
 import { TypingAnimation } from '@/components/ui/TypingAnimation'
-import { personal } from '@/data'
+import { certifications, personal } from '@/data'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,7 +19,7 @@ const socials = [
   { href: personal.github,    label: 'GitHub',      icon: Github  },
   { href: personal.linkedin,  label: 'LinkedIn',    icon: Linkedin },
   { href: personal.tryhackme, label: 'TryHackMe',   icon: Shield  },
-  { href: `tel:${personal.phone}`, label: '+91 9939112334', icon: Phone },
+  { href: `tel:${personal.phone.replace(/\s/g, '')}`, label: personal.phone, icon: Phone },
 ]
 
 export function Hero() {
@@ -191,23 +191,38 @@ export function Hero() {
                   <div><span className="text-[#475569]">┌──(</span><span className="text-[#22D3EE]">saurav㉿kali</span><span className="text-[#475569]">)-[~]</span></div>
                   <div><span className="text-[#475569]">└─$ </span><span className="text-[#22D3EE]">cat profile.json</span></div>
                   <div className="mt-1 text-[#94A3B8]">{'{'}</div>
-                  <div className="pl-3.5"><span className="text-[#818CF8]">"role"</span><span className="text-[#94A3B8]">: </span><span className="text-[#34D399]">"Cybersecurity Engineer"</span><span className="text-[#94A3B8]">,</span></div>
-                  <div className="pl-3.5"><span className="text-[#818CF8]">"focus"</span><span className="text-[#94A3B8]">: </span><span className="text-[#34D399]">"VAPT &amp; Sec Automation"</span><span className="text-[#94A3B8]">,</span></div>
-                  <div className="pl-3.5"><span className="text-[#818CF8]">"cgpa"</span><span className="text-[#94A3B8]">: </span><span className="text-[#34D399]">8.56</span><span className="text-[#94A3B8]">,</span></div>
-                  <div className="pl-3.5"><span className="text-[#818CF8]">"status"</span><span className="text-[#94A3B8]">: </span><span className="text-[#34D399]">"Open to Work 🟢"</span></div>
+                  {[
+                    ['role', '"TCE Trainee @ Cisco CX"'],
+                    ['focus', '"Software · AI · Security"'],
+                    ['stack', '"Python · Java · FastAPI"'],
+                    ['cgpa', personal.cgpa],
+                    ['status', '"Open to Work 🟢"'],
+                  ].map(([k, v], i, arr) => (
+                    <div key={k} className="pl-3.5">
+                      <span className="text-[#818CF8]">&quot;{k}&quot;</span>
+                      <span className="text-[#94A3B8]">: </span>
+                      <span className="text-[#34D399]">{v}</span>
+                      {i < arr.length - 1 && <span className="text-[#94A3B8]">,</span>}
+                    </div>
+                  ))}
                   <div className="text-[#94A3B8]">{'}'}</div>
                 </div>
                 <div className="mb-4">
                   <div><span className="text-[#475569]">└─$ </span><span className="text-[#22D3EE]">certs --verified</span></div>
-                  <div><span className="text-[#34D399]">✓</span><span className="text-[#94A3B8]"> eJPTv2&nbsp;&nbsp;&nbsp;</span><span className="text-[#818CF8]">INE</span><span className="text-[#94A3B8]">&nbsp; Jun 2025</span></div>
-                  <div><span className="text-[#34D399]">✓</span><span className="text-[#94A3B8]"> PT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span className="text-[#818CF8]">THM</span><span className="text-[#94A3B8]">&nbsp; Aug 2025</span></div>
-                  <div><span className="text-[#34D399]">✓</span><span className="text-[#94A3B8]"> ICCA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span className="text-[#818CF8]">INE</span><span className="text-[#94A3B8]">&nbsp; Jun 2025</span></div>
+                  {certifications.map(c => (
+                    <div key={c.id} className="whitespace-pre">
+                      <span className="text-[#34D399]">✓</span>
+                      <span className="text-[#94A3B8]"> {c.short.padEnd(8, ' ')}</span>
+                      <span className="text-[#818CF8]">{c.issuerShort.padEnd(5, ' ')}</span>
+                      <span className="text-[#94A3B8]">{c.issued}</span>
+                    </div>
+                  ))}
                 </div>
                 <div>
                   <div><span className="text-[#475569]">└─$ </span><span className="text-[#22D3EE]">tools --list</span></div>
-                  <div className="text-[#94A3B8]">nmap&nbsp;&nbsp;burpsuite&nbsp;&nbsp;metasploit</div>
-                  <div className="text-[#94A3B8]">sqlmap&nbsp;&nbsp;wireshark&nbsp;&nbsp;splunk</div>
-                  <div className="text-[#94A3B8]">owasp-zap&nbsp;&nbsp;autopsy&nbsp;&nbsp;kali</div>
+                  <div className="text-[#94A3B8]">python&nbsp;&nbsp;java&nbsp;&nbsp;fastapi&nbsp;&nbsp;react</div>
+                  <div className="text-[#94A3B8]">docker&nbsp;&nbsp;git&nbsp;&nbsp;sqlite&nbsp;&nbsp;pytest</div>
+                  <div className="text-[#94A3B8]">nmap&nbsp;&nbsp;burpsuite&nbsp;&nbsp;owasp-zap</div>
                   <div className="mt-1">
                     <span className="text-[#475569]">└─$ </span>
                     <span className="animate-blink inline-block w-2 h-3.5 bg-[#22D3EE] align-middle" />

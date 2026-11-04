@@ -19,11 +19,11 @@ export function CertificationsSection() {
             Verified Credentials
           </h2>
           <p className="text-[15.5px] text-[#94A3B8] max-w-[540px] leading-[1.75] mb-14">
-            Industry-recognized certifications demonstrating practical penetration testing and cloud security expertise.
+            Industry certifications in ethical hacking, penetration testing and cloud — every one is publicly verifiable.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {certifications.map((cert, i) => (
             <motion.article
               key={cert.id}

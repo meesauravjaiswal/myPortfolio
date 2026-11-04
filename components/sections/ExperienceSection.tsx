@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ExternalLink } from 'lucide-react'
 import { experiences } from '@/data'
 
 export function ExperienceSection() {
@@ -18,7 +19,7 @@ export function ExperienceSection() {
             Where I&apos;ve Worked
           </h2>
           <p className="text-[15.5px] text-[#94A3B8] max-w-[540px] leading-[1.75] mb-14">
-            Hands-on cybersecurity experience through active internship and leading a university security club.
+            Software engineering at Cisco, a Capgemini fellowship, a police cyber-cell internship, and leading a university security club.
           </p>
         </motion.div>
 
@@ -44,13 +45,27 @@ export function ExperienceSection() {
                     {exp.period}
                   </span>
                 </div>
-                <div className="text-[13.5px] text-[#22D3EE] font-medium mb-2.5">{exp.role}</div>
+                <div className="flex flex-wrap items-baseline gap-x-2 mb-2.5">
+                  <span className="text-[13.5px] text-[#22D3EE] font-medium">{exp.role}</span>
+                  <span className="font-mono text-[11.5px] text-[#475569]">· {exp.location}</span>
+                </div>
                 <p className="text-[14px] text-[#94A3B8] leading-[1.72] mb-4">{exp.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {exp.tags.map(t => (
                     <span key={t} className="tag">{t}</span>
                   ))}
                 </div>
+                {exp.link && (
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-mono text-[11.5px] text-[#22D3EE] hover:opacity-70 transition-opacity mt-4"
+                  >
+                    <ExternalLink size={11} aria-hidden="true" />
+                    {exp.linkLabel ?? 'View'}
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

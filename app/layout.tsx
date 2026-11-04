@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { certifications, personal } from '@/data'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -20,43 +21,45 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '600'],
 })
 
+const siteTitle = `${personal.name} | ${personal.title}`
+const siteDescription = `${personal.name} — ${personal.title}. ${personal.currentRole}. Builds in Python and Java; ${certifications.map(c => c.short).join(', ')} certified. KIIT CS&CE 2026.`
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://meesauravjaiswal.dev'),
+  metadataBase: new URL(personal.siteUrl),
   title: {
-    default: 'Saurav Kumar Jaiswal | Cybersecurity Engineer',
-    template: '%s | Saurav Kumar Jaiswal',
+    default: siteTitle,
+    template: `%s | ${personal.name}`,
   },
-  description:
-    'Saurav Kumar Jaiswal — Cybersecurity Engineer, Penetration Tester & Security Automation Specialist. eJPTv2, PT1, ICCA certified. KIIT Bhubaneswar, 2026.',
+  description: siteDescription,
   keywords: [
-    'Saurav Kumar Jaiswal', 'Cybersecurity Engineer', 'Penetration Tester',
-    'VAPT', 'eJPTv2', 'PT1', 'ICCA', 'KIIT', 'Security Engineer',
-    'AutoVAPT', 'SubEnum', 'Security Automation', 'DevSecOps', 'Ethical Hacker',
+    personal.name, 'Software Engineer', 'Security Engineer', 'Python', 'Java', 'FastAPI',
+    'LLM', 'Agentic AI', 'Penetration Tester', 'VAPT', 'CEH v13', 'eJPTv2', 'PT1', 'ICCA',
+    'Cisco', 'KIIT', 'ExploitAIzer', 'KronoX',
   ],
-  authors: [{ name: 'Saurav Kumar Jaiswal', url: 'https://meesauravjaiswal.dev' }],
-  creator: 'Saurav Kumar Jaiswal',
+  authors: [{ name: personal.name, url: personal.siteUrl }],
+  creator: personal.name,
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://meesauravjaiswal.dev',
-    title: 'Saurav Kumar Jaiswal | Cybersecurity Engineer',
-    description: 'Penetration Tester · VAPT Specialist · Security Automation Engineer',
-    siteName: 'Saurav Kumar Jaiswal',
+    url: personal.siteUrl,
+    title: siteTitle,
+    description: 'Software Engineer · Security Engineer · AI / LLM Builder',
+    siteName: personal.name,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Saurav Kumar Jaiswal | Cybersecurity Engineer',
-    description: 'Penetration Tester · VAPT Specialist · Security Engineer',
-    creator: '@meesauravjaiswal',
+    title: siteTitle,
+    description: 'Software Engineer · Security Engineer · AI / LLM Builder',
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large' },
   },
-  verification: {
-    google: 'YOUR_GOOGLE_SEARCH_CONSOLE_KEY',
-  },
+  ...(googleVerification && !googleVerification.startsWith('your-')
+    ? { verification: { google: googleVerification } }
+    : {}),
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -69,27 +72,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Saurav Kumar Jaiswal',
-              jobTitle: 'Cybersecurity Engineer',
-              email: 'saurav.jaiswal.meee@gmail.com',
-              telephone: '+919939112334',
+              name: personal.name,
+              jobTitle: personal.title,
+              worksFor: { '@type': 'Organization', name: 'Cisco' },
+              email: `mailto:${personal.email}`,
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Bhagalpur',
-                addressRegion: 'Bihar',
+                addressLocality: 'Bengaluru',
+                addressRegion: 'Karnataka',
                 addressCountry: 'IN',
               },
               alumniOf: {
                 '@type': 'CollegeOrUniversity',
                 name: 'Kalinga Institute of Industrial Technology',
               },
-              url: 'https://meesauravjaiswal.dev',
-              sameAs: [
-                'https://github.com/meesauravjaiswal',
-                'https://linkedin.com/in/meesauravjaiswal',
-                'https://tryhackme.com/p/saurav.jaiswal',
-              ],
-              knowsAbout: ['Penetration Testing', 'VAPT', 'Cybersecurity', 'Python', 'Kali Linux'],
+              url: personal.siteUrl,
+              sameAs: [personal.github, personal.linkedin, personal.tryhackme],
+              knowsAbout: ['Software Engineering', 'Python', 'Java', 'LLM Agents', 'Penetration Testing', 'VAPT'],
             }),
           }}
         />

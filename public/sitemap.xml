@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://meesauravjaiswal.dev/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/projects</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/experience</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/certifications</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/skills</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://meesauravjaiswal.dev/resume</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/projects</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/experience</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/certifications</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/skills</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/resume</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sauravjaiswal.vercel.app/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>
